@@ -11,19 +11,19 @@ LiquidCrystal_I2C lcd(0x3F, 16, 2); // Configuración de pantalla LCD con direcc
 const int botonPin = 13;
  
 // Pines para sensores infrarrojos de detección de monedas
-int irSensor_005 = 2; // Sensor para monedas de 5 centavos
-float dinero_005; // Variable para almacenar el dinero acumulado de monedas de 5 centavos
+int irSensor_005 = 2; // Sensor para monedas de 5 centimos
+float dinero_005; // Variable para almacenar el dinero acumulado de monedas de 5 centimos
  
-int irSensor_01 = 4; // Sensor para monedas de 10 centavos
+int irSensor_01 = 4; // Sensor para monedas de 10 centimos
 float dinero_01;
  
-int irSensor_02 = 7; // Sensor para monedas de 20 centavos
+int irSensor_02 = 7; // Sensor para monedas de 20 centimos
 float dinero_02;
  
 int irSensor_1 = 8; // Sensor para monedas de 1 euro
 float dinero_1;
  
-int irSensor_05 = 9; // Sensor para monedas de 50 centavos
+int irSensor_05 = 9; // Sensor para monedas de 50 centimos
 float dinero_05;
  
 int irSensor_2 = 10; // Sensor para monedas de 2 euros
