@@ -11,11 +11,12 @@ LiquidCrystal_I2C lcd(0x3F, 16, 2); // Configuración de pantalla LCD con direcc
 const int botonPin = 13;
  
 // Pines para sensores infrarrojos de detección de monedas
-int irSensor_005 = 2; // Sensor para monedas de 5 centimos
-float dinero_005; // Variable para almacenar el dinero acumulado de monedas de 5 centimos
  
-int irSensor_01 = 4; // Sensor para monedas de 10 centimos
+int irSensor_01 = 2; // Sensor para monedas de 10 centimos
 float dinero_01;
+
+int irSensor_005 = 4; // Sensor para monedas de 5 centimos
+float dinero_005; // Variable para almacenar el dinero acumulado de monedas de 5 centimos
  
 int irSensor_02 = 7; // Sensor para monedas de 20 centimos
 float dinero_02;
@@ -53,8 +54,8 @@ void setup() {
     lcd.print(dinero_total_1); // Mostrar el valor inicial del total
  
     // Configuración de pines de sensores como entrada
-    pinMode(irSensor_005, INPUT);
     pinMode(irSensor_01, INPUT);
+    pinMode(irSensor_005, INPUT);
     pinMode(irSensor_02, INPUT);
     pinMode(irSensor_1, INPUT);
     pinMode(irSensor_05, INPUT);
@@ -86,14 +87,13 @@ void setup() {
  
 void loop() {
     // Detección de monedas y actualización de valores
-    if (digitalRead(irSensor_005) == LOW) {
-        delay(200); // Pequeño retraso para evitar doble lectura
-        dinero_005 += 0.05;
-    }
     if (digitalRead(irSensor_01) == LOW) {
         delay(200);
         dinero_01 += 0.1;
     }
+      if (digitalRead(irSensor_005) == LOW) {
+        delay(200); // Pequeño retraso para evitar doble lectura
+        dinero_005 += 0.05;
     if (digitalRead(irSensor_02) == LOW) {
         delay(200);
         dinero_02 += 0.2;
